@@ -52,6 +52,7 @@ int pingpong_open(struct inode *inode, struct file *file) {
 
     /* Make file decriptor "remember" its mirror device object,
      * for later use in open() and write(). */
+    file->private_data = pp_dev;
 
     return 0;
 }
